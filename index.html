@@ -26,14 +26,6 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -46,7 +38,7 @@
         <div class="d-flex flex-column">
 
             <div class="profile">
-                <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+                <img src="assets/img/profile-img.webp" alt="" class="img-fluid rounded-circle">
                 <h1 class="text-light"><a href="index.html">Ujjwal Pandey</a></h1>
                 <div class="social-links mt-3 text-center">
                     <a href="https://www.linkedin.com/in/ujjwalpandey/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
@@ -91,7 +83,7 @@
 
                 <div class="row">
                     <div class="col-lg-4" data-aos="fade-right">
-                        <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/profile-img.webp" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <h3>Current stint:</h3>
@@ -211,10 +203,11 @@
                         <div class="resume-item">
                             <h4>Effulgence 2015 Android App - KNIT</h4>
                             <h5>2015</h5>
-                            <p><em><b>Android App Developer</b></em></p>
+                            <p><em><b>Android Developer</b></em></p>
                             <ul>
                                 <li>Designed and developed an app to streamline college festival management. A key feature of the app is the ability for organizers to broadcast real-time messages to approximately 1500 participants, facilitated by Firebase push notifications.</li>
-                                <li>The <a href="https://github.com/UjjwalPandey/Effulgence-2015-KNIT" target="_blank">Github link</a> of the project. The app was unpublished as the Fest ended.</li>
+                                <li>The <a href="https://github.com/UjjwalPandey/Effulgence-2015-KNIT" target="_blank">Github link<i class="bx bxl-github"></i></a> of the project.
+                                    The app was unpublished as the Fest ended.</li>
                                 <li><b>Java | Android Studio | Google Maps | Firebase</b></li>
                             </ul>
                         </div>
@@ -251,7 +244,6 @@
 
                 <div class="section-title">
                     <h2>Skills</h2>
-                    <p>Some explanations.</p>
                 </div>
 
                 <div class="row skills-content">
@@ -356,7 +348,7 @@
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="javascript:void(0);" method="post" role="form" class="php-email-form">
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Your Name</label>
@@ -380,7 +372,7 @@
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                             </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="text-center"><button type="submit" onclick="sendEmail()">Send Message</button></div>
                         </form>
                     </div>
 
@@ -408,6 +400,30 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "ujwal1pande@gmail.com",
+                Password: "ikA@16/12ipA@9/8",
+                To: 'ujwalpande@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "Sending Email using javascript",
+                Body: "Well that was easy!!",
+                Attachments: [
+                  {
+                    name: "File_Name_with_Extension",
+                    path: "Full Path of the file"
+                  }]
+            })
+            .then(function (message) {
+                console.log(message);
+              alert("Mail has been sent successfully")
+            });
+        }
+    </script>
 </body>
 
 </html>
