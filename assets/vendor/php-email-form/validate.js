@@ -50,25 +50,24 @@
   });
 
   function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
-      method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
+    Email.send({
+        SecureToken: "7bee1fac-fec0-4140-86dd-c9f4a9d9711a",
+        To: document.getElementById("contact-email").textContent,
+        From: document.getElementById("email").value,
+        Subject: document.getElementById("subject").value,
+        Body: document.getElementsByName("message")[0].value
     })
-    .then(response => {
-      if( response.ok ) {
-        return response.text();
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-      }
+    .then(function (message) {
+       console.log(message);
+       return message;
     })
     .then(data => {
       thisForm.querySelector('.loading').classList.remove('d-block');
       if (data.trim() == 'OK') {
         thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
+        thisForm.reset();
       } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
+        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action);
       }
     })
     .catch((error) => {

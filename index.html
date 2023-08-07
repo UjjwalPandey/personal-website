@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Ujjwal Pandey - Index</title>
+    <title>Ujjwal Pandey - Personal Website</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -203,7 +203,7 @@
                             <h5>2015</h5>
                             <p><em><b>Android Developer</b></em></p>
                             <ul>
-                                <li>Designed and developed an app to streamline college festival management. A key feature of the app is the ability for organizers to broadcast real-time messages to approximately 1500 participants, facilitated by Firebase push notifications.</li>
+                                <li>Designed and developed an Android app to streamline college festival management which also involves broadcasting real-time messages.</li>
                                 <li>The <a href="https://github.com/UjjwalPandey/Effulgence-2015-KNIT" target="_blank">Github link<i class="bx bxl-github"></i></a> of the project.
                                     The app was unpublished as the Fest ended.</li>
                                 <li><b>Java | Android Studio | Google Maps | Firebase</b></li>
@@ -216,19 +216,6 @@
                             <h4>Bachelor of Technology (Computer Science & Engineering)</h4>
                             <h5>2012 - 2016</h5>
                             <p><em>Kamla Nehru Institute of Technology, Sultanpur, UP</em></p>
-                            <p>78.4%</p>
-                        </div>
-                        <div class="resume-item">
-                            <h4>Class 12 (CBSE)</h4>
-                            <h5>2011 - 2012</h5>
-                            <p><em>Kendriya Vidyalaya, 39 GTC, Varanasi, UP</em></p>
-                            <p> 90.2% | Physics, Chemistry, Mathematics & C++</p>
-                        </div>
-                        <div class="resume-item">
-                            <h4>Class 10 (CBSE)</h4>
-                            <h5>2009 - 2010</h5>
-                            <p><em>Kendriya Vidyalaya, 39 GTC, Varanasi, UP</em></p>
-                            <p> 9.8 CGPA | English, Hindi, Mathematics, Science & Social Science</p>
                         </div>
                     </div>
                 </div>
@@ -337,7 +324,7 @@
                             <div class="email">
                                 <i class="bi bi-envelope"></i>
                                 <h4>Email:</h4>
-                                <p><a href="mailto:ujwalpande@gmail.com">ujwalpande@gmail.com</a></p>
+                                <p><a href="mailto:ujwalpande@gmail.com" id="contact-email">ujwalpande@gmail.com</a></p>
                             </div>
 
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31111.67912624449!2d77.62522308008039!3d12.910299474556032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1491bfdc6ecd%3A0xf232718439fbc879!2sHSR%20Layout%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1690398967643!5m2!1sen!2sin" width:100%; height: 290px; style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -370,7 +357,7 @@
                                 <div class="error-message"></div>
                                 <div class="sent-message">Your message has been sent. Thank you!</div>
                             </div>
-                            <div class="text-center"><button type="submit" onclick="sendEmail()">Send Message</button></div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
                         </form>
                     </div>
 
@@ -401,26 +388,6 @@
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script type="text/javascript">
-        function sendEmail() {
-            Email.send({
-                Host: "smtp.gmail.com",
-                Username: "ujwal1pande@gmail.com",
-                Password: "ikA@16/12ipA@9/8",
-                To: 'ujwalpande@gmail.com',
-                From: document.getElementById("email").value,
-                Subject: "Sending Email using javascript",
-                Body: "Well that was easy!!",
-                Attachments: [
-                  {
-                    name: "File_Name_with_Extension",
-                    path: "Full Path of the file"
-                  }]
-            })
-            .then(function (message) {
-                console.log(message);
-              alert("Mail has been sent successfully")
-            });
-        }
 
         function yoe_duration(){
             var joiningDate = new Date("06/15/2016");
