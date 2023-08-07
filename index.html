@@ -96,7 +96,7 @@
                             <div class="col-lg-6">
                                 <ul>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Role:</strong> <span>Engineering Manager</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Total experience:</strong> <span> 7.2 years</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Experience:</strong> <span id="yoe_duration"></span></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
@@ -140,8 +140,6 @@
                             </ul>
                         </div>
                         <div class="resume-item">
-                            <!-- <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5> -->
                             <p><em><b>Tech Lead - Backend</b></em></p>
                             <ul>
                                 <li>Led end-to-end development of BuyAndSell microservice, akin to OLX, and an in-house Ads platform, resulting in the establishment of a new revenue-generating stream for the company.</li>
@@ -423,6 +421,77 @@
               alert("Mail has been sent successfully")
             });
         }
+
+        function yoe_duration(){
+            var joiningDate = new Date("06/15/2016");
+            var joiningDateYear = joiningDate.getYear();
+            var joiningDateMonth = joiningDate.getMonth();
+            var joiningDateDate = joiningDate.getDate();
+
+            var now = new Date();
+            //extract the year, month, and date from current date
+            var currentYear = now.getYear();
+            var currentMonth = now.getMonth();
+            var currentDate = now.getDate();
+
+            //declare a variable to collect the yoe in year, month, and days
+            var yoe = {};
+            var yoeString = "";
+
+            //get years
+            yearAge = currentYear - joiningDateYear;
+
+            //get months
+            if (currentMonth >= joiningDateMonth)
+              //get months when current month is greater
+              var monthAge = currentMonth - joiningDateMonth;
+            else {
+                yearAge--;
+                var monthAge = 12 + currentMonth - joiningDateMonth;
+            }
+
+            //get days
+            if (currentDate >= joiningDateDate)
+              //get days when the current date is greater
+              var dateAge = currentDate - joiningDateDate;
+            else {
+                monthAge--;
+                var dateAge = 31 + currentDate - joiningDateDate;
+
+                if (monthAge < 0) {
+                    monthAge = 11;
+                    yearAge--;
+                }
+            }
+            //group the yoe in a single variable
+            yoe = {
+                years: yearAge,
+                months: monthAge,
+                days: dateAge
+            };
+
+            if ( (yoe.years > 0) && (yoe.months > 0) && (yoe.days > 0) )
+               yoeString = yoe.years + " years, " + yoe.months + " months, and " + yoe.days + " days";
+            else if ( (yoe.years == 0) && (yoe.months == 0) && (yoe.days > 0) )
+               yoeString = "Only " + yoe.days + " days!";
+            else if ( (yoe.years > 0) && (yoe.months == 0) && (yoe.days == 0) )
+               yoeString = yoe.years +  " years.";
+            else if ( (yoe.years > 0) && (yoe.months > 0) && (yoe.days == 0) )
+               yoeString = yoe.years + " years and " + yoe.months + " months";
+            else if ( (yoe.years == 0) && (yoe.months > 0) && (yoe.days > 0) )
+               yoeString = yoe.months + " months and " + yoe.days + " days";
+            else if ( (yoe.years > 0) && (yoe.months == 0) && (yoe.days > 0) )
+               yoeString = yoe.years + " years, and" + yoe.days + " days";
+            else if ( (yoe.years == 0) && (yoe.months > 0) && (yoe.days == 0) )
+               yoeString = yoe.months + " months";
+            //when current date is same as yoe
+            else yoeString = "Fresher";
+
+            return yoeString;
+        }
+
+        document.getElementById("yoe_duration").textContent = yoe_duration();
+
     </script>
 </body>
 
